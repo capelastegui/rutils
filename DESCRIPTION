@@ -15,3 +15,5 @@ Imports:
     plyr (>= 1.8.1)
     dplyr (>= 0.4.1)
 URL: https://github.com/capelastegui/rutils
+BugReports:: https://github.com/capelastegui/rutils/issues
+

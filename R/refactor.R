@@ -1,5 +1,5 @@
 require(plyr)
-# apply factor again to a data frame
+# apply factor again to columns data frame - useful after subsetting
 refactor <- function(data) {
     colwise(function(col) {
         if (is.factor(col)) 

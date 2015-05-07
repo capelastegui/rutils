@@ -1,8 +1,3 @@
-require(ROCR)
-require(plyr)
-require(dplyr)
-require(ggplot2)
-
 # adapting ROCR plots to ggplot standards we plot from a 'performance' object, composed of: - x.name: label
 # X - y.name: label Y - alpha.name : color label - x.values: list of numeric X values - y.values: list of
 # numeric Y values - alpha.values: list of numeric alpha values

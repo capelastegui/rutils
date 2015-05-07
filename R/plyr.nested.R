@@ -1,6 +1,4 @@
-require(plyr)
-require(reshape2)
-require(dplyr)
+
 
 
 # llply.cross.ab takes 2 lists la, lb, and a function .fun2 for each element la1 in list la, for each

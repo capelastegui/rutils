@@ -1,14 +1,14 @@
 Package: rutils
 Type: Package
 Title: R Utilities
-Version: 1.0
+Version: 0.0.0.9000
 Date: 2015-04-18
 Author: Pedro Capelastegui
 Authors@R: person("Pedro", "Capelastegui", email = "pcapelastegui@gmail.co",
   role = c("aut", "cre"))
 Maintainer: Pedro Capelastegui (pcapelastegui@gmail.com)
 Description: Miscellaneous R Utilities
-License: Apache
+License: MIT
 Depends: 
     R (>= 3.0.1)
 Imports:

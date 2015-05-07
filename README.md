@@ -1,2 +1,2 @@
-# Rutils
+# utils
 R programming utilities

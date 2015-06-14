@@ -1,6 +1,12 @@
-# adapting ROCR plots to ggplot standards we plot from a 'performance' object, composed of: - x.name: label
-# X - y.name: label Y - alpha.name : color label - x.values: list of numeric X values - y.values: list of
-# numeric Y values - alpha.values: list of numeric alpha values
+# adapting ROCR plots to ggplot standards
+# we plot from a 'performance' object, composed of:
+## - x.name: label X
+## - y.name: label Y
+## - alpha.name : color label
+## - x.values: list of numeric X values
+## - y.values: list of numeric Y values
+## - alpha.values: list of numeric alpha values
+
 
 # We use ... parameter for plot title.
 
@@ -11,7 +17,7 @@ rocrToDf <- function(perf) {
     }
     df <- data.frame(x = perf@x.values, y = perf@y.values, alpha = alpha)
     names(df) <- c("x", "y", "alpha")
-    df <- df %.% mutate(y.max = max(y, na.rm = TRUE))
+    df <- df %>% mutate(y.max = max(y, na.rm = TRUE))
     attr(df, "XLabel") <- perf@x.name
     attr(df, "YLabel") <- perf@y.name
     attr(df, "alphaLabel") <- perf@alpha.name
@@ -22,7 +28,7 @@ rocrListToDf <- function(perfList) {
     perfList <- llply.labelname(perfList)
     df <- ldply(perfList, .fun = function(perf) {
         rocrToDf(perf)
-    }) %.% tbl_df()
+    }) %>% tbl_df()
     attr(df, "XLabel") <- perfList[[1]]@x.name
     attr(df, "YLabel") <- perfList[[1]]@y.name
     attr(df, "alphaLabel") <- perfList[[1]]@alpha.name
@@ -166,9 +172,9 @@ getPredMatchDf <- function(predTable, .glm, threshold = 0.5, windowSize = 300) {
     breaksTmp <- seq.POSIXt(floor_date(pred.match.df$date[1], "day"), ceiling_date(tail(pred.match.df$date, 
         1), "day"), windowSize)
     breaksTmpLabels <- head(as.POSIXct(breaksTmp), -1)
-    pred.match.df <- pred.match.df %.% mutate(match = target == pred.glm) %.% mutate(interval = as.POSIXct(cut.POSIXt(date, 
-        breaks = breaksTmp, labels = breaksTmpLabels))) %.% select(-date) %.% melt(id = c("interval", "match")) %.% 
-        tbl_df() %.% group_by(interval, variable, value, match) %.% summarise(events = n())
+    pred.match.df <- pred.match.df %>% mutate(match = target == pred.glm) %>% mutate(interval = as.POSIXct(cut.POSIXt(date, 
+        breaks = breaksTmp, labels = breaksTmpLabels))) %>% select(-date) %>% melt(id = c("interval", "match")) %>% 
+        tbl_df() %>% group_by(interval, variable, value, match) %>% summarise(events = n())
     attr(pred.match.df, "threshold") <- threshold
     return(pred.match.df)
 }

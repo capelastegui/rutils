@@ -6,14 +6,17 @@ Date: 2015-04-18
 Author: Pedro Capelastegui
 Authors@R: person("Pedro", "Capelastegui", email = "pcapelastegui@gmail.co",
   role = c("aut", "cre"))
-Maintainer: Pedro Capelastegui (pcapelastegui@gmail.com)
 Description: Miscellaneous R Utilities
 License: MIT
 Depends: 
     R (>= 3.0.1)
-Imports:
-    plyr (>= 1.8.1)
-    dplyr (>= 0.4.1)
+Imports: 
+    plyr (>= 1.8.1),
+    dplyr (>= 0.4.1),
+    ROCR (>= 1.0-7),
+    ggplot2 (>= 1.0.1),
+    reshape2 (>= 1.4.1),
+    gsubfn (>= 0.6-6)
 URL: https://github.com/capelastegui/rutils
-BugReports:: https://github.com/capelastegui/rutils/issues
-
+BugReports: : https://github.com/capelastegui/rutils/issues
+Suggests: testthat

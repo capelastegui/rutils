@@ -10,6 +10,23 @@
 
 # We use ... parameter for plot title.
 
+
+#' rocrToDf
+#'
+#' Converts a performance object into a dataframe usable by ggplot
+#'
+#' This is the Details section
+#'
+#' @param x type. description
+#' @return description
+#' @author your name
+#' @seealso \code{\link{fun2}}
+#' @examples
+#' fun1(2)
+#' length(fun1(20))
+#' @export
+
+
 rocrToDf <- function(perf) {
     alpha <- perf@alpha.values
     if (length(alpha) != length(perf@x.values)) {
